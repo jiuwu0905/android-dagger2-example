@@ -1,9 +1,10 @@
-package com.terry.daggerapp.repository;
+package com.terry.daggergradlemodule.respository;
+
+import com.terry.daggergradlemodule.di.LoginActivityScope;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
-@Singleton
+@LoginActivityScope
 public class UserRepository {
 
     private final UserLocalDataSource localDataSource;
@@ -14,6 +15,15 @@ public class UserRepository {
 
         this.localDataSource = localDataSource;
         this.remoteDataSource = remoteDataSource;
+    }
+
+
+    public String getLocalString(){
+        return localDataSource.getData();
+    }
+
+    public String getRemoteString(){
+        return remoteDataSource.getData();
     }
 
 

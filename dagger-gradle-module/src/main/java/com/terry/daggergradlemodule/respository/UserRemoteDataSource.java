@@ -1,6 +1,6 @@
-package com.terry.daggerapp.repository;
+package com.terry.daggergradlemodule.respository;
 
-import com.terry.daggerapp.net.LoginRetrofitService;
+import com.terry.daggergradlemodule.net.LoginRetrofitService;
 
 import javax.inject.Inject;
 
@@ -12,4 +12,7 @@ public class UserRemoteDataSource {
         this.loginRetrofitService = loginRetrofitService;
     }
 
+    public String getData() {
+        return "I m from remote";
+    }
 }

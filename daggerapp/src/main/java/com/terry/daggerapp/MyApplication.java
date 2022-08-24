@@ -4,8 +4,10 @@ import android.app.Application;
 
 import com.terry.daggerapp.di.ApplicationComponent;
 import com.terry.daggerapp.di.DaggerApplicationComponent;
+import com.terry.daggergradlemodule.di.LoginComponent;
+import com.terry.daggergradlemodule.di.LoginComponentProvider;
 
-public class MyApplication extends Application {
+public class MyApplication extends Application implements LoginComponentProvider {
 
     public ApplicationComponent getApplicationComponent() {
         return applicationComponent;
@@ -22,4 +24,8 @@ public class MyApplication extends Application {
     }
 
 
+    @Override
+    public LoginComponent provideLoginComponent() {
+        return applicationComponent.loginComponent().create();
+    }
 }

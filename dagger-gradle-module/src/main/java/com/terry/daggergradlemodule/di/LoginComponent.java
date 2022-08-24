@@ -1,13 +1,15 @@
-package com.terry.daggerapp.di;
+package com.terry.daggergradlemodule.di;
 
-import com.terry.daggerapp.MainActivity;
 
-import dagger.Component;
+import com.terry.daggergradlemodule.MainActivity;
+
 import dagger.Subcomponent;
 
-@ActivityScope
+
+@LoginActivityScope
 @Subcomponent
 public interface LoginComponent {
+
 
     @Subcomponent.Builder
     interface Factory{

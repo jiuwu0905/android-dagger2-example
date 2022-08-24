@@ -1,5 +1,7 @@
 package com.terry.daggerapp.net;
 
+import com.terry.daggergradlemodule.net.LoginRetrofitService;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
