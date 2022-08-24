@@ -1,1 +1,3 @@
 include ':app'
+include ':daggerapp'
+include ':dagger-gradle-module'
