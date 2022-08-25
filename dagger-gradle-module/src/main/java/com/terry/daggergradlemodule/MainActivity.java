@@ -4,8 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.terry.daggerbaselibrary.BaseApplication;
+import com.terry.daggerbaselibrary.LoginComponentProvider;
+import com.terry.daggerbaselibrary.di.ApplicationComponent;
+import com.terry.daggergradlemodule.di.DaggerLoginComponent;
 import com.terry.daggergradlemodule.di.LoginComponent;
-import com.terry.daggergradlemodule.di.LoginComponentProvider;
 import com.terry.daggergradlemodule.vm.LoginViewModel;
 
 import javax.inject.Inject;
@@ -19,15 +22,19 @@ public class MainActivity extends AppCompatActivity {
     LoginViewModel loginViewModel;
 
 
-    LoginComponent loginComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ApplicationComponent applicationComponent = ((BaseApplication) getApplication()).applicationComponent;
 
 
-        loginComponent = ((LoginComponentProvider) getApplication()).provideLoginComponent();
+        LoginComponent loginComponent = DaggerLoginComponent.builder().applicationComponent(applicationComponent).build();
 
         loginComponent.inject(this);
+        // loginComponent =  ((BaseApplication) getApplication()).applicationComponent
+
+
+
 
 
         super.onCreate(savedInstanceState);

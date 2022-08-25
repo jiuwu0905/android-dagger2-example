@@ -1,4 +1,4 @@
-package com.terry.daggergradlemodule.net;
+package com.terry.daggerbaselibrary.net;
 
 public interface LoginRetrofitService {
 }

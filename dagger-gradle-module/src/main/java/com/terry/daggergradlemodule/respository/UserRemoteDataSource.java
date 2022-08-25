@@ -1,6 +1,6 @@
 package com.terry.daggergradlemodule.respository;
 
-import com.terry.daggergradlemodule.net.LoginRetrofitService;
+import com.terry.daggerbaselibrary.net.LoginRetrofitService;
 
 import javax.inject.Inject;
 
